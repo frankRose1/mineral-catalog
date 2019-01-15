@@ -1,4 +1,6 @@
 data/
 example/
+.idea/
+.DS_Store
 detail-preview.png
 list-preview.png
