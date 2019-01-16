@@ -5,7 +5,9 @@
 
 import json
 import os
+from pathlib import Path
 
+tester = Path(__file__).resolve().parents[0]
 
 CURRENT_DIR = os.getcwd()
 INITIAL_DATA_PATH = "{}/minerals/mineral_data/minerals.json".format(CURRENT_DIR)
@@ -25,12 +27,18 @@ def replace_whitespace(mineral_dict):
 
 
 def load_initial_data():
-    with open(TEST_DATA_PATH, 'r') as json_file:
+    with open(TEST_DATA_PATH, 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
-        for line in data:
-            new_dict = replace_whitespace(line)
-            print(new_dict)
+        print(isinstance(data, list))
+        print(isinstance(data, dict))
+        # for line in data:
+        #     print(line)
+        #     print('----------')
+        # for line in data:
+        #     new_dict = replace_whitespace(line)
+        #     print(new_dict)
 
 
 if __name__ == "__main__":
     load_initial_data()
+

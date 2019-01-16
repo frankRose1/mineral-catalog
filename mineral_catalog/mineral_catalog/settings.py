@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'minerals'
+    'minerals',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,6 @@ ROOT_URLCONF = 'mineral_catalog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # this is where layout.html is
         'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
