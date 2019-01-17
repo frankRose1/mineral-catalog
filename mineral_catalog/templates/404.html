@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="not-found-error">
+        <h1>404</h1>
+        <h4>Oops! We couldn't find the page you requested.</h4>
+        <p><a class="minerals__anchor" href="{% url 'minerals:list' %}">Return Home</a></p>
+    </div>
+{% endblock %}

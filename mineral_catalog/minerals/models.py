@@ -27,3 +27,7 @@ class Mineral(models.Model):
     crystal_habit = models.CharField(max_length=255, blank=True, default='')
     specific_gravity = models.CharField(max_length=255, blank=True, default='')
     group = models.CharField(max_length=255, blank=True, default='')
+
+    def __iter__(self):
+        """Used to loop over the keys/values in mineral_detail.html"""
+        return self.__d
