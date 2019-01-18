@@ -1,83 +1,84 @@
 {% extends "layout.html" %}
 
-{% load static %}
+{% load static from staticfiles%}
+{% load mineral_extras %}
 
 {% block content %}
     <div class="grid-100 mineral__container">
       <h1 class="mineral__name">{{ mineral.name }}</h1>
       <div class="mineral__image-bg">
-        <img class="mineral__image" alt="{{ mineral.name }}" src="{% get_static_prefix %}images/{{ mineral.image_filename }}">
+        <img class="mineral__image" alt="{{ mineral.name }}" src="{% static '' %}images/{{ mineral.image_filename }}">
         <p class="mineral__caption">{{ mineral.image_caption }}</p>
       </div>
       <div class="mineral__table-container">
         <table class="mineral__table">
           <tr>
             <td class="mineral__category">Category</td>
-            <td>{{ mineral.category }}</td>
+            <td>{{ mineral.category|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Group</td>
-            <td>{{ mineral.group }}</td>
+            <td>{{ mineral.group|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Formula</td>
-            <td class="mineral__formula">{{ mineral.formula }}</td>
+            <td class="mineral__formula">{{ mineral.formula|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Strunz Classification</td>
-            <td>{{ mineral.strunz_classification }}</td>
+            <td>{{ mineral.strunz_classification|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Unit Cell</td>
-            <td>{{ mineral.unit_cell }}</td>
+            <td>{{ mineral.unit_cell|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Color</td>
-            <td>{{ mineral.color }}</td>
+            <td>{{ mineral.color|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Crystal Habit</td>
-            <td>{{ mineral.crystal_habit }}</td>
+            <td>{{ mineral.crystal_habit|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Crystal System</td>
-            <td>{{ mineral.crystal_system }}</td>
+            <td>{{ mineral.crystal_system|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Crystal Symmetry</td>
-            <td>{{ mineral.crystal_symmetry }}</td>
+            <td>{{ mineral.crystal_symmetry|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Mohs Scale Hardness</td>
-            <td>{{ mineral.mohs_scale_hardness }}</td>
+            <td>{{ mineral.mohs_scale_hardness|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Cleavage</td>
-            <td>{{ mineral.cleavage }}</td>
+            <td>{{ mineral.cleavage|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Luster</td>
-            <td>{{ mineral.luster }}</td>
+            <td>{{ mineral.luster|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Streak</td>
-            <td>{{ mineral.streak }}</td>
+            <td>{{ mineral.streak|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Diaphaneity</td>
-            <td>{{ mineral.diaphaneity }}</td>
+            <td>{{ mineral.diaphaneity|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Optical Properties</td>
-            <td>{{ mineral.optical_properties }}</td>
+            <td>{{ mineral.optical_properties|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Refractive Index</td>
-            <td>{{ mineral.refractive_index }}</td>
+            <td>{{ mineral.refractive_index|field_or_na }}</td>
           </tr>
           <tr>
             <td class="mineral__category">Specific Gravity</td>
-            <td>{{ mineral.specific_gravity }}</td>
+            <td>{{ mineral.specific_gravity|field_or_na }}</td>
           </tr>
         </table>
       </div>
