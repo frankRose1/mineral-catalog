@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('minerals/', include('minerals.urls', namespace='minerals'))
 ]
+
+# checks for debug mode
+# if so, adds a static path that points to the files in the static folders
+urlpatterns += staticfiles_urlpatterns()

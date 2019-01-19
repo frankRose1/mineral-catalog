@@ -14,7 +14,7 @@
 </head>
 <body>
     <!--TODO Add "bounds--small" class conditionally-->
-    <div class="bounds">
+    <div class="{% block main_class %}bounds{% endblock %}">
       <div class="grid-100">
         <a href="{% url 'minerals:list' %}">
           <svg class="logo" viewBox="0 0 127.6 84.8" preserveAspectRation="xMinYMin meet">
