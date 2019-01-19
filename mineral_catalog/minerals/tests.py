@@ -3,6 +3,7 @@ from django.urls import reverse
 
 
 from .models import Mineral
+from .templatetags import mineral_extras
 
 test_mineral_1 = {
     'name': 'Testing Minerals',
@@ -67,11 +68,27 @@ class MineralViewsTests(TestCase):
         self.assertContains(res, self.mineral_1.formula)
         self.assertContains(res, self.mineral_1.unit_cell)
 
-
     def test_mineral_detail_template(self):
-        res = self.client.get(reverse('minerals:detail',kwargs={
+        res = self.client.get(reverse('minerals:detail', kwargs={
             'mineral_id': self.mineral_2.id
         }))
         self.assertEqual(res.status_code, 200)
         self.assertTemplateUsed(res, 'minerals/mineral_detail.html')
 
+
+class TemplateTagsTests(TestCase):
+
+    def test_field_or_na_no_field(self):
+        # Should return N/A for an empty field
+        result = mineral_extras.field_or_na(None)
+        self.assertEqual(result, 'N/A')
+
+    def test_field_or_na_valid_field(self):
+        # Should return the field if its present
+        result = mineral_extras.field_or_na(test_mineral_1.get('name'))
+        self.assertEqual(result, test_mineral_1.get('name'))
+
+    def test_random_mineral_id(self):
+        # used in the random mineral URL
+        result = mineral_extras.random_mineral_id()
+        self.assertIsInstance(result, int)

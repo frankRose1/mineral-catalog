@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load mineral_extras %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +33,8 @@
   </div>
 
   <div class="minerals__random">
-    <a class="minerals__anchor" href="#">Show random mineral</a>
+    {% random_mineral_id as id %}
+      <a class="minerals__anchor" href="{% url 'minerals:detail' id %}">Show random mineral</a>
   </div>
 </body>
 </html>
