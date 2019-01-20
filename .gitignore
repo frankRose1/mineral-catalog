@@ -1,6 +1,7 @@
-data/
-example/
 .idea/
 .DS_Store
 detail-preview.png
 list-preview.png
+db.sqlite3
+assets/images/
+.coverage
