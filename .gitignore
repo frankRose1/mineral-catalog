@@ -5,3 +5,4 @@ list-preview.png
 db.sqlite3
 assets/images/
 .coverage
+.vscode

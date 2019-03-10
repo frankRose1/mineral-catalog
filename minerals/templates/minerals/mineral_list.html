@@ -2,12 +2,16 @@
 
 {% block content %}
     <div class="grid-100">
-      <ul class="minerals__container">
-          {% for mineral in minerals %}
-            <li class="minerals__item">
-                <a class="minerals__anchor" href="{% url 'minerals:detail' mineral.id %}">{{ mineral.name }}</a>
-            </li>
-          {% endfor %}
-      </ul>
+        {% if minerals.count == 0 %}
+            <h2>Sorry, no results were found.</h2>
+        {% else %}
+            <ul class="minerals__container">
+                {% for mineral in minerals %}
+                    <li class="minerals__item">
+                        <a class="minerals__anchor" href="{% url 'minerals:detail' mineral.id %}">{{ mineral.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+      {% endif %}
     </div>
 {% endblock %}

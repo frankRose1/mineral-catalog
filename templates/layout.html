@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{% static 'css/global.css' %}">
 </head>
 <body>
-    <!--TODO Add "bounds--small" class conditionally-->
+
     <div class="{% block main_class %}bounds{% endblock %}">
       <div class="grid-100">
         <a href="{% url 'minerals:list' %}">
@@ -25,6 +25,13 @@
           <h1 class="logo__name text-centered">Macky's Minerals</h1>
         </a>
         <p class="logo__text text-centered">They're not rocks!</p>
+      </div>
+
+      <div class="search-form">
+        <form action="{% url 'minerals:search' %}" method='get'>
+          <input type="search" name="query" id="query" placeholder="Search by mineral name">
+          <input type="submit" value="Search">
+        </form>
       </div>
 
       {% block content %}
