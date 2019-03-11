@@ -1,0 +1,7 @@
+<ul class='letter-menu'>
+    {% for letter in letters %}
+      <li>
+        <a href="{% url 'minerals:sorted_list' letter %}">{{ letter }}</a>
+      </li>
+    {% endfor %}
+</ul>

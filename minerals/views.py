@@ -5,8 +5,10 @@ from .models import Mineral
 # Create your views here.
 
 
-def mineral_list(request):
-    minerals = Mineral.objects.all()
+def mineral_list(request, letter='A'):
+    minerals = Mineral.objects.filter(
+      Q(name__istartswith=letter)
+    )
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
 
 

@@ -29,3 +29,13 @@ def field_or_na(field_value):
         return 'N/A'
 
     return field_value
+
+@register.inclusion_tag('minerals/letter_menu.html')
+def letter_menu():
+    """Will allow users to filter by the first letter of a mineral's name"""
+    letters = [
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+        'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+        'Y', 'Z'
+    ]
+    return {'letters': letters}
