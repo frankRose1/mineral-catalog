@@ -33,9 +33,12 @@
             <input class="minerals__anchor form-btn" type="submit" value="Search">
           </form>
       </nav>
-
-    {% letter_menu %}
-    {% group_menu %}
+    
+    <section class="filter-menu">
+      <h2>Filter</h2>
+      {% group_menu %}
+      {% letter_menu %}
+    </section>
   <div class="{% block main_class %}bounds{% endblock %}">
 
       {% block content %}

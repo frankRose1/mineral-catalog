@@ -233,14 +233,41 @@ form.search {
     margin-left: -5px;
 }
 
-.letter-menu {
-    padding: 5px;
+/* Filter Menu styles */
+/* TODO: need a style for the active link in the filter menu */
+
+.filter-menu {
+    max-width: 350px;
     background: #fff;
-    max-width: 600px;
-    margin: 0 auto;
-    list-style: none;
     border-radius: 5px;
+}
+
+.filter-menu h2,
+.filter-menu h3 {
+    padding-left: 10px;
+}
+
+.filter-menu h2{
+    border-bottom: 10px solid #406b44;
+}
+
+.filter-menu h3 {
+    border-bottom: 5px solid #406b44;
+}
+
+.filter-submenu {
+    padding: 10px;
+    list-style: none;
+}
+
+.letter-menu {
     display: grid;
     grid-gap: 10;
-    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-template-columns: repeat(5, minmax(10px, 1fr));
+}
+
+.group-menu {
+    display: grid;
+    grid-gap: 10;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
 }
