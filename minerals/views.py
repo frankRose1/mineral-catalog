@@ -23,3 +23,10 @@ def search(request):
       Q(name__icontains=term)
     )
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
+
+
+def filtered_list(request, group):
+    minerals = Mineral.objects.filter(
+      Q(group__iexact=group)
+    )
+    return render(request, 'minerals/mineral_list.html', {'minerals': minerals})

@@ -39,3 +39,15 @@ def letter_menu():
         'Y', 'Z'
     ]
     return {'letters': letters}
+
+
+@register.inclusion_tag('minerals/group_menu.html')
+def group_menu():
+    """Allows users to filter by a mineral's group"""
+    groups = [
+        'Silicates', 'Oxides', 'Sulfates', 'Carbonates',
+        'Halides', 'Sulfosalts', 'Phosphates', 'Borates',
+        'Organic Minerals', 'Arsenates', 'Native Elements',
+        'Other'
+    ]
+    return {'groups': groups}

@@ -1,0 +1,8 @@
+
+<ul class='group-menu'>
+  {% for group in groups %}
+  <li >
+    <a href="{% url 'minerals:filtered_list' group %}">{{ group }}</a>
+  </li>
+{% endfor %}
+</ul>
