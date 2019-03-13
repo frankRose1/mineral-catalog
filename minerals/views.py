@@ -4,11 +4,18 @@ from .models import Mineral
 
 # Create your views here.
 
-
-def mineral_list(request, letter='A'):
-    minerals = Mineral.objects.filter(
-      Q(name__istartswith=letter)
-    )
+def mineral_list(request):
+    # should default to A
+    starts_with = request.GET.get('starts_with', 'A')
+    group = request.GET.get('group', None)
+    if group:
+        minerals = Mineral.objects.filter(
+          Q(group__iexact=group)
+        )
+    else:
+        minerals = Mineral.objects.filter(
+          Q(name__istartswith=starts_with)
+        )
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
 
 
@@ -24,9 +31,3 @@ def search(request):
     )
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
 
-
-def filtered_list(request, group):
-    minerals = Mineral.objects.filter(
-      Q(group__iexact=group)
-    )
-    return render(request, 'minerals/mineral_list.html', {'minerals': minerals})

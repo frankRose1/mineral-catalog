@@ -3,7 +3,7 @@
     <ul class='filter-submenu letter-menu'>
         {% for letter in letters %}
           <li>
-            <a href="{% url 'minerals:sorted_list' letter %}">{{ letter }}</a>
+            <a href="{% url 'minerals:filtered_list' %}?starts_with={{ letter }}">{{ letter }}</a>
           </li>
         {% endfor %}
     </ul>
