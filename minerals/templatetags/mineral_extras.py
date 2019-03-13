@@ -31,18 +31,18 @@ def field_or_na(field_value):
     return field_value
 
 @register.inclusion_tag('minerals/letter_menu.html')
-def letter_menu():
+def letter_menu(active_letter):
     """Will allow users to filter by the first letter of a mineral's name"""
     letters = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
         'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
         'Y', 'Z'
     ]
-    return {'letters': letters}
+    return {'letters': letters, 'active_letter': active_letter}
 
 
 @register.inclusion_tag('minerals/group_menu.html')
-def group_menu():
+def group_menu(active_group):
     """Allows users to filter by a mineral's group"""
     groups = [
         'Silicates', 'Oxides', 'Sulfates', 'Carbonates',
@@ -50,4 +50,4 @@ def group_menu():
         'Organic Minerals', 'Arsenates', 'Native Elements',
         'Other'
     ]
-    return {'groups': groups}
+    return {'groups': groups, 'active_group': active_group}

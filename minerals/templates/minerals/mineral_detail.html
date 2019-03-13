@@ -3,9 +3,14 @@
 {% load static %}
 {% load mineral_extras %}
 
-{% block main_class%} {{ block.super }} bounds--small {% endblock %}
-
 {% block content %}
+
+    <section class="filter-menu">
+      <h2>Filter</h2>
+      {% group_menu active_group='' %}
+      {% letter_menu active_letter='' %}
+    </section>
+
     <div class="grid-100 mineral__container">
       <h1 class="mineral__name">{{ mineral.name }}</h1>
       <div class="mineral__image-bg">

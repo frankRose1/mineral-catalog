@@ -5,18 +5,26 @@ from .models import Mineral
 # Create your views here.
 
 def mineral_list(request):
-    # should default to A
-    starts_with = request.GET.get('starts_with', 'A')
+    starts_with = request.GET.get('starts_with', None)
     group = request.GET.get('group', None)
     if group:
         minerals = Mineral.objects.filter(
           Q(group__iexact=group)
         )
-    else:
+    elif starts_with:
         minerals = Mineral.objects.filter(
           Q(name__istartswith=starts_with)
         )
-    return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
+    else:
+        minerals = Mineral.objects.filter(
+          Q(name__istartswith='A')
+        )
+    context = {
+      'minerals': minerals,
+      'letter': starts_with,
+      'group': group
+    }
+    return render(request, 'minerals/mineral_list.html', context=context)
 
 
 def mineral_detail(request, mineral_id):

@@ -1,6 +1,14 @@
 {% extends "layout.html" %}
+{% load mineral_extras %}
 
 {% block content %}
+
+    <section class="filter-menu">
+        <h2>Filter</h2>
+        {% group_menu active_group=group %}
+        {% letter_menu active_letter=letter %}
+    </section>
+
     <div class="grid-100">
         {% if minerals.count == 0 %}
             <h2>Sorry, no results were found.</h2>

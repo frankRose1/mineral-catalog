@@ -34,8 +34,13 @@ html { font-size: 62.5%; }
 
 body { background-color: #CAE5D2; font-size: 1.5em; line-height: 1.6; font-weight: 400; font-family: "Cousine"; color: #666; }
 
-.bounds { max-width: 800px; margin: 0 auto; padding: 50px 0 150px; overflow: hidden; }
-.bounds--small { max-width: 600px; padding: 50px 10px 150px; }
+.bounds { 
+    max-width: 1250px; 
+    margin: 100px auto; 
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
 
 .grid, .grid-5, .grid-10, .grid-15, .grid-20, .grid-25, .grid-30, .grid-33, .grid-35, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60, .grid-65, .grid-66, .grid-70, .grid-75, .grid-80, .grid-90, .grid-95, .grid-100 { float: left; box-sizing: border-box; position: relative; }
 .grid-5 { width: 5%; padding: 0 15px; }
@@ -121,7 +126,7 @@ body { background-color: #CAE5D2; font-size: 1.5em; line-height: 1.6; font-weigh
 .grid-100 { width: 100%; padding: 0 15px; }
 @media (min-width: 640px) { .grid-pull-100 { left: -100%; } }
 @media (min-width: 640px) { .grid-push-100 { left: 100%; } }
-@media screen and (max-width: 640px) { .grid-100 { width: 100%; left: 0; } }
+@media screen and (max-width: 640px) { .grid-100 { width: 100%;} }
 .grid-parent { margin: 0; margin-right: -15px; margin-left: -15px; }
 .grid-parent:before, .grid-parent:after { content: " "; display: table; }
 .grid-parent:after { clear: both; }
@@ -191,7 +196,7 @@ table, p, ul { margin-bottom: 2.5rem; }
 .minerals__random .minerals__anchor { display: inline; color: #fff; padding: 6px 24px 5px 24px; }
 .minerals__random .minerals__anchor:hover { color: #384033; }
 
-.mineral__container { background-color: #fff; border-radius: 6px; list-style: none; padding: 0; text-align: center; }
+.mineral__container { max-width: 900px; background-color: #fff; border-radius: 6px; list-style: none; padding: 0; text-align: center; }
 .mineral__name { display: block; width: 100%; margin: 0; font-size: 24px; padding: 30px 0 30px 0; }
 .mineral__image { display: block; margin: 0 auto; border: solid 2px #CAE5D2; }
 .mineral__image-bg { background-color: #ecfaf8; padding: 20px 0; }
@@ -238,6 +243,7 @@ form.search {
 
 .filter-menu {
     max-width: 350px;
+    max-height: 650px;
     background: #fff;
     border-radius: 5px;
 }
@@ -270,4 +276,10 @@ form.search {
     display: grid;
     grid-gap: 10;
     grid-template-columns: repeat(2, minmax(120px, 1fr));
+}
+
+.active_link {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
 }
