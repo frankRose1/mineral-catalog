@@ -1,11 +1,13 @@
 # Mineral Catalog With Django
-This website displays information about minerals in a database using the Django framework. Views include a list of all database entries and a more detailed view which shows all the info available
-for a given mineral. I used migrations to populate the database with JSON data, which you can see in ```minerals/migrations/0002_auto_20190116_0020```
+This website displays information about minerals in a database using Django. Views include a list of all database entries and a more detailed view which shows all the info available
+for a given mineral. Also includes a search feature and a filter menu. I used migrations to populate the database with JSON data, which you can see in ```minerals/migrations/0002_auto_20190116_0020```
 
 **NOTE** I purposely didn't commit the images as there are hundreds.
 
 ## App Features
-* Minerals list view which shows all minerals in the database
+* Minerals list view which shows a list of minerals in the databse
+* Search feature that will search by name, mohs scale hardness, or crystal symmetry
+* Filter allows filtering by group or aplhabetically
 * Detailed mineral view for a single mineral
 * Serves static css/images
 * Custom filters/tags

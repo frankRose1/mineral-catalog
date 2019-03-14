@@ -35,7 +35,7 @@ def mineral_detail(request, mineral_id):
 def search(request):
     term = request.GET.get('query')
     minerals = Mineral.objects.filter(
-      Q(name__icontains=term)
+      Q(name__icontains=term)|Q(mohs_scale_hardness__exact=term)|Q(crystal_system__icontains=term)
     )
     return render(request, 'minerals/mineral_list.html', {'minerals': minerals})
 

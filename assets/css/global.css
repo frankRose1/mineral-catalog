@@ -227,7 +227,7 @@ nav {
 }
 
 form.search {
-    max-width: 500px;
+    width: 500px;
 }
 
 .form-btn {
@@ -239,7 +239,6 @@ form.search {
 }
 
 /* Filter Menu styles */
-/* TODO: need a style for the active link in the filter menu */
 
 .filter-menu {
     max-width: 350px;
